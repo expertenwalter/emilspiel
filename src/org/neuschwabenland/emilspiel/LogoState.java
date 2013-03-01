@@ -1,5 +1,6 @@
 package org.neuschwabenland.emilspiel;
 
+import org.neuschwabenland.emilspiel.util.ColorTools;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;

@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.neuschwabenland.emilspiel;
+package org.neuschwabenland.emilspiel.util;
 
 import org.newdawn.slick.Color;
 
