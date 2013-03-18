@@ -19,7 +19,11 @@ public class GameState extends BasicGameState implements MusicListener {
 	private void startLevel(int levelId) throws Exception {
 		// level = LevelLoader.load("levels/" + levelId + ".lvl");
 		level = new TestLevel();
-		player = new PlayerObject(32, 48);
+		player = new PlayerObject(32, 64);
+
+		camera = new GameCamera();
+		camera.setX(0);
+		camera.setConstraints(0, level.getLength() * 32 - 640);
 	}
 
 	@Override
@@ -38,16 +42,18 @@ public class GameState extends BasicGameState implements MusicListener {
 	@Override
 	public void render(GameContainer arg0, StateBasedGame arg1, Graphics g)
 			throws SlickException {
-		level.render(g, loader);
-		player.render(g);
-
+		level.render(camera, g, loader);
+		player.render(camera, g);
 	}
 
 	@Override
 	public void update(GameContainer container, StateBasedGame sbg, int delta)
 			throws SlickException {
-		player.update(container, sbg, delta);
+		player.update(container, sbg, level, delta);
 		level.update(container, sbg, delta);
+
+		camera.setTargetX(player.getX());
+		camera.update(delta);
 	}
 
 	@Override

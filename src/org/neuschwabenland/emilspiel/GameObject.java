@@ -20,12 +20,19 @@ public abstract class GameObject {
 		this.type = type;
 	}
 
-	public void update(GameContainer container, StateBasedGame sbg, int delta) {
+	public float getX() {
+		return this.xPos;
+	}
+
+	public float getY() {
+		return this.yPos;
+	}
+
+	public void update(GameContainer container, StateBasedGame sbg, GameLevel level, int delta) {
 
 	}
 
-	public void render(Graphics g)
-	{
-		
+	public void render(GameCamera camera, Graphics g) {
+
 	}
 }

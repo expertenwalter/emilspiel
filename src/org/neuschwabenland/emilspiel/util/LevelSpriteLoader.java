@@ -18,7 +18,9 @@ public class LevelSpriteLoader {
 				sprites[i] = new Image("res/level/" + i + ".png");
 			else {
 				sprites[i] = new Image(32, 32);
-				sprites[i].getGraphics().setColor(new Color((i % 16) * 16, (i % 16) * 16, 255-((i % 16) * 16)));
+				sprites[i].getGraphics().setColor(
+						new Color((i % 16) * 16, (i % 16) * 16,
+								255 - ((i % 16) * 16)));
 				sprites[i].getGraphics().fillRect(0, 0, 32, 32);
 				sprites[i].getGraphics().setColor(Color.white);
 				sprites[i].getGraphics().drawString("" + i, 8, 8);
